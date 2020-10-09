@@ -1,0 +1,28 @@
+package com.codewithshah;
+import java.lang.*;
+import java.io.*;
+import java.util.*;
+public class fifth {
+
+
+    public static void main(String[] args) {
+
+        String input = "Geeks For Geeks";
+        char[] temparray = input.toCharArray();
+        int left=0, right = 0;
+        right = temparray.length - 1;
+
+        while (left <=right) {
+            // Swap values of left and right
+            char temp = temparray[left];
+            temparray[left] = temparray[right];
+            temparray[right] = temp;
+            left++;
+            right--;
+        }
+
+        for (char c : temparray)
+            System.out.print(c);
+        System.out.println();
+    }
+}
