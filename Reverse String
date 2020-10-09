@@ -1,0 +1,26 @@
+package SAK.MyFirstproject;
+
+public class simple {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		 String input = "GeeksforGeeks  I Love Programming"; 
+		 
+		byte[]  b = input.getBytes();
+		byte[]  c = new byte[b.length];
+		
+		for(int i=0;i<b.length;i++)
+		{
+			c[i] = b[b.length-i-1];
+			
+			
+		}
+		
+		System.out.print(new String(c));
+
+		
+		
+	}
+
+}
