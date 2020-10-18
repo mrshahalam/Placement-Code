@@ -33,7 +33,7 @@ public class fifth {
         return output;
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException { //
 
         Scanner sc=new Scanner(System.in);
         System.out.print("How many number socks you want to  enter :\n");
