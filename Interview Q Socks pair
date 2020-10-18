@@ -1,0 +1,50 @@
+package com.codewithshah;
+import java.io.IOException;
+import java.util.Scanner;
+public class fifth {
+    static int socks(int[] arr,int n) throws IOException {
+        int Num = 0;
+        int output = 0;
+
+        for (int i = 0; i < n - 1; i++){
+            for (int j = 0; j < n - i - 1; j++){
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
+        int j;
+        for(int i=0;i<arr.length;i++){
+            int ele=arr[i];
+            Num=0;
+            for(j=i;j<n;j++){
+                if(arr[j]==ele){
+                    Num++;
+                }
+                else {
+                    break;
+                }
+            }
+            output+=Num/2; //pair
+            i=j-1;
+        }
+        return output;
+    }
+
+    public static void main(String[] args) throws IOException {
+
+        Scanner sc=new Scanner(System.in);
+        System.out.print("How many number socks you want to  enter :\n");
+        int n=sc.nextInt();
+        int[] arr=new int[n];
+        System.out.println("Enter the number");
+        for (int i = 0; i < n; i++) {
+            arr[i]=sc.nextInt();
+        }
+        int result=socks(arr,n);        //[1,1,1,1,2,3,3,3,3,3,3,3,4,4,4,4,4]
+        System.out.println("The number of pair of the socks is : "+result);
+    }
+}
+
